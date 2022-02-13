@@ -42,11 +42,13 @@ namespace ProductReviewManagement
             {
                 Console.WriteLine("Product Id : " + list.ProductId + " || User Id : " + list.UserId + " || Rating : " + list.Rating + " || Review : " + list.Review + " || Is Like : " + list.isLike);
             }
-            Console.WriteLine("------------------------------------------------------------------------------------------------ ");
-            Console.WriteLine(" Retrieve Count Of Review For Each ProductId");
+            Console.WriteLine("\n------------------------------------------------------------------------------------------------ \n Retrieve ProductId And Review Of All Records \n");
+
             Management management = new Management();
 
-            management.RetrieveCountOfReviewForEachProductId(productlist);
+            management.RetrieveProductIdAndReviewOfAllRecords(productlist);
+
+
         }
     }
 }
