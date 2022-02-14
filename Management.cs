@@ -8,14 +8,13 @@ namespace ProductReviewManagement
 {
     class Management
     {
-        public void SkipTopFiveRecords(List<ProductReview> review)
+        public void RetrieveProductIdAndReviewUsingSelect(List<ProductReview> review)
         {
-            var recordData = (from products in review
-                              select products).Skip(5);
+            var recordData = review.Select(products => new { ProductId = products.ProductId, Review = products.Review });
 
             foreach (var list in recordData)
             {
-                Console.WriteLine("Product Id : " + list.ProductId + " || User Id : " + list.UserId + " || Rating : " + list.Rating + " || Review : " + list.Review + " || Is Like : " + list.isLike);
+                Console.WriteLine("Product Id : " + list.ProductId + " || Review : " + list.Review);
             }
         }
     }
